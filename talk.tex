@@ -1,0 +1,301 @@
+\documentclass{beamer}	% Compile at least twice!
+%\setbeamertemplate{navigation symbols}{}
+\usetheme{Warsaw}
+%\useinnertheme{rectangles}
+%\useoutertheme{infolines}
+\useoutertheme[title,section,subsection=true]{smoothbars}
+
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	ctex,
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		    % Enumerate Environments
+	%enumitem,
+	graphicx,			% Include Images
+	lastpage,			% Reference Lastpage
+	multicol,			% Use Multi-columns
+	multirow,			% Use Multi-rows
+	pifont,			    % For Checkmarks
+	stmaryrd			% For brackets
+}
+\usepackage[english]{babel}
+
+
+% -------------------
+% Colors
+% -------------------
+\definecolor{UniOrange}{RGB}{0,160,200}
+\definecolor{UniGray}{RGB}{62,61,60}
+\definecolor{Ivory}{RGB}{255,255,240}
+\definecolor{Azure4}{RGB}{131,139,139}
+%\definecolor{UniRed}{HTML}{B31B1B}
+%\definecolor{UniGray}{HTML}{222222}
+\setbeamercolor{title}{fg=UniGray}
+\setbeamercolor{frametitle}{fg=Ivory}
+\setbeamercolor{structure}{fg=UniOrange}
+\setbeamercolor{section in head/foot}{bg=UniGray}
+\setbeamercolor{author in head/foot}{bg=UniGray}
+\setbeamercolor{date in head/foot}{fg=UniGray}
+\setbeamercolor{structure}{fg=UniOrange}
+\setbeamercolor{local structure}{fg=Azure4}
+\beamersetuncovermixins{\opaqueness<1>{0}}{\opaqueness<2->{15}}
+
+
+% -------------------
+% Fonts & Layout
+% -------------------
+\useinnertheme{default}
+\usefonttheme{serif}
+\usepackage{palatino}
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+\setbeamertemplate{itemize items}[circle]
+%\setbeamertemplate{enumerate items}[default]
+
+
+% -------------------
+% Commands
+% -------------------
+
+% Special Characters
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% Math Operators
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Span}{span}
+
+% Special Commands
+\newcommand{\pf}{\noindent\emph{Proof. }}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\defeq}{\stackrel{\text{def}}{=}}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\ma}[1]{\stackrel{#1}{\longrightarrow}}
+\newcommand{\twomatrix}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4 \end{pmatrix}}
+
+
+% -------------------
+% Tikz & PGF
+% -------------------
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{unicode-math}
+\setmathfont{XITS Math}
+\setmathfont{XITS Math}[StylisticSet=1,range=cal]
+\usetikzlibrary{
+	calc,
+	decorations.pathmorphing,
+	matrix,arrows,
+	positioning,
+	shapes.geometric
+}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\usepackage{algorithm,algpseudocode}
+\makeatletter
+\newenvironment{breakablealgorithm}
+{
+		\begin{center}
+			\refstepcounter{algorithm}% New algorithm
+			\hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+			\renewcommand{\caption}[2][\relax]{% Make a new \caption
+				%{\raggedright\textbf{\textbf{算法}~\thealgorithm} ##2\par}%
+               {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+				\ifx\relax##1\relax % #1 is \relax
+				\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+				\else % #1 is not \relax
+				\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+				\fi
+				\kern2pt\hrule\kern2pt
+			}
+		}{
+		\kern2pt\hrule\relax %\@fs@post% for \@fs@ruled
+	\end{center}
+}
+\makeatother
+\newcommand{\rr}{\tilde{r}_{0}}
+\setbeamercovered{dynamic}
+
+
+% -------------------
+% Theorem Environments
+% -------------------
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[section]
+\newtheorem{nex}{Non-Example}[section]
+\newtheorem{dfn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\numberwithin{equation}{section}
+
+
+% -------------------
+% Title Page
+% -------------------
+\title{\textcolor{white}{How to Get Rid of Ghosts}}
+\subtitle{\textcolor{white}{Mathematics Conference for the Mysterious and Magical}}
+\author{Ann B. Dextrous \quad \newline \newline 导师: xf}
+\institute{北京工业大学}
+\date{\today}
+\logo{\includegraphics[scale=0.1]{bjut.png}}
+%\date{April 1, 2020}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+
+% Title Page
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+% Motivation
+\section{Motivation}
+
+
+
+% My Motivation
+\begin{frame}
+My motivation in giving this talk is to get a Ph.D. \dots
+\end{frame}
+
+
+
+% Definitions & Examples
+\begin{frame}
+Here is my definition\dots
+
+\begin{dfn}[Ph.D.]
+A Ph.D. is something you sweat and cry for.
+\end{dfn}
+
+\begin{ex}
+I studied so hard for my qualifying exam I replaced my childhood memories with an entire chapter of Hartshorne's \emph{Algebraic Geometry}.
+\end{ex}
+\end{frame}
+
+
+
+% Main Results
+\section{Main Results}
+
+
+
+% Theorem
+\begin{frame}
+\begin{thm}[D.]
+For all $n$, we have $n^2= n \cdot n$.
+\end{thm}
+
+\pf With massive loss of generality, let $n=1$. Then we have
+	\[
+	1=1^2= 1 \cdot 1= 1
+	\]
+Therefore by overwhelming hope, it must always be true. \qed
+\end{frame}
+
+
+
+% Corollary
+\begin{frame}
+Most algebra you need to be true is true.
+\begin{cor}
+For all $n,m \in \N$, $(n+m)^2= n^2 + m^2$.
+\end{cor}
+\end{frame}
+
+
+
+% Applications
+\section{Applications}
+
+
+
+% Application 1
+\begin{frame}
+	\begin{enumerate}[1.]
+	\item Bleach is mostly water. \pause
+	\item We are mostly water. \pause
+	\item Therefore, we are bleach.
+	\end{enumerate} \vspace{0.5cm}
+
+Now we pause for the big reveal\dots \pause \vspace{0.3cm}
+
+	\begin{itemize}
+	\item I am clearly a master of logic.
+	\item Masters of logic get Ph.D's.
+	\item I have earned this.
+	\end{itemize}
+\end{frame}
+
+
+
+% Math
+\begin{frame}
+Finally! Some Math! \vspace{1cm}
+
+Here is some Math: $\int_1^\alpha \dfrac{x^2}{\sin x^2} \;dx$ and $\sum i^2$. \vspace{1cm}
+
+But you could make this Math big inline with `displaystyle': $\ds \int_1^\alpha \dfrac{x^2}{\sin x^2} \;dx$ and $\ds \sum i^2$. \vspace{1cm}
+
+And even more Math:
+	\[
+	\oint \vec{\nabla} \times \vec{F} \;dV = \sum_{n=1}^\infty \ov{p} \twomatrix{a}{b}{c}{d}
+	\]
+\end{frame}
+%跨页
+\begin{frame}[allowframebreaks]{}
+\begin{breakablealgorithm}
+\begin{algorithmic}[1]
+\end{algorithmic}
+\end{breakablealgorithm}
+\end{frame}
+
+\begin{frame}
+\begin{block}{ABC}
+DEF
+\end{block}
+\begin{exampleblock}{ABC}
+DEF
+\end{exampleblock}
+\begin{alertblock}{ABC}
+DEF
+\end{alertblock}
+\end{frame}
+
+% Conclusion
+\section{Conclusion}
+
+
+
+% End Slide
+\begin{frame}
+Ph.D. plz\dots
+\end{frame}
+
+
+
+% Questions
+\begin{frame}
+\begin{center} {\bfseries \Large Questions?} \end{center}
+\end{frame}
+
+
+\end{document}

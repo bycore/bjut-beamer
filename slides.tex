@@ -1,0 +1,153 @@
+\documentclass[11pt,xcolor={table},UFTF8]{beamer}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{array,booktabs,multirow,makecell,textcomp}
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usetheme{Warsaw}
+\usepackage{ctex}
+%\usepackage{latexsym,amssymb,amsmath,amsbsy,amsopn,amstext,xcolor,multicol}
+%\usepackage{graphicx,wrapfig,fancybox}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+%\usepackage[english]{babel}
+\usepackage{datetime}
+\useoutertheme[title,section,subsection=true]{smoothbars}
+
+
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{navigation symbols}{}
+\newcolumntype{x}[1]{>{\centering\arraybackslash}m{#1}}
+
+\newcommand\Wider[2][3em]{%
+	\makebox[\linewidth][c]{%
+		\begin{minipage}{\dimexpr\textwidth+#1\relax}
+			\raggedright#2
+		\end{minipage}%
+	}%
+}
+
+\defbeamertemplate*{footline}{shadow theme}
+{%
+	\leavevmode%
+	\hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle%
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+
+% -------------------
+% Fonts & Layout
+% -------------------
+\useinnertheme{default}
+\usefonttheme{serif}
+\usepackage{palatino}
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+\setbeamertemplate{itemize items}[circle]
+%\setbeamertemplate{enumerate items}[default]
+
+
+% -------------------
+% Commands
+% -------------------
+
+% Special Characters
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% Math Operators
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Span}{span}
+
+% Special Commands
+\newcommand{\pf}{\noindent\emph{Proof. }}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\defeq}{\stackrel{\text{def}}{=}}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\ma}[1]{\stackrel{#1}{\longrightarrow}}
+\newcommand{\twomatrix}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4 \end{pmatrix}}
+
+% -------------------
+% Colors
+% -------------------
+\definecolor{UniOrange}{RGB}{0,160,200}
+\definecolor{UniGray}{RGB}{62,61,60}
+\definecolor{Ivory}{RGB}{255,255,240}
+\definecolor{Azure4}{RGB}{131,139,139}
+%\definecolor{UniRed}{HTML}{B31B1B}
+%\definecolor{UniGray}{HTML}{222222}
+\setbeamercolor{title}{fg=UniGray}
+\setbeamercolor{frametitle}{fg=Ivory}
+\setbeamercolor{structure}{fg=UniOrange}
+\setbeamercolor{section in head/foot}{bg=UniGray}
+\setbeamercolor{author in head/foot}{bg=UniGray}
+\setbeamercolor{date in head/foot}{fg=UniGray}
+\setbeamercolor{structure}{fg=UniOrange}
+\setbeamercolor{local structure}{fg=Azure4}
+\beamersetuncovermixins{\opaqueness<1>{0}}{\opaqueness<2->{15}}
+% Use \bibentry{} for full citation
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[section]
+\newtheorem{nex}{Non-Example}[section]
+\newtheorem{dfn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\numberwithin{equation}{section}
+
+
+\begin{document}
+	
+	\bibliographystyle{plain}
+	\nobibliography{references}
+	
+	\title{\textcolor{white}{BJUT beamer}}
+	%\subtitle{\textcolor{white}{Mathematics Conference for the Mysterious and Magical}}
+	\author{Wang Bingyi}
+	\institute{Beijing University Of Technology}
+	\newdateformat{usvardate}{
+		\monthname[\THEMONTH] \ordinal{DAY}, \THEYEAR
+	}
+	\date{\usvardate\today}
+	\logo{\includegraphics[scale=0.1]{bjut.png}}
+	%\date{}
+	%\subject{}
+	%\setbeamercovered{transparent}
+	%\setbeamertemplate{navigation symbols}{}
+	
+\begin{frame}{}
+%	\maketitle
+	\titlepage
+\end{frame}
+
+\begin{frame}{EDUCATION}
+	\begin{block}{}
+		支持中文
+	\end{block}
+\end{frame}
+
+\begin{frame}{}
+	\begin{center}
+		{\Huge\calligra Thanks!}
+	\end{center}
+\end{frame}
+\end{document}
